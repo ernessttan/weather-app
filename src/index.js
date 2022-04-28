@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const toggleSwitch = document.querySelector('input[type=checkbox]');
   toggleSwitch.addEventListener('change', () => {
+    const city = document.querySelector('#city');
     if (toggleSwitch.checked) {
-      displayWeather('imperial');
+      displayWeather(city.textContent, 'imperial');
     } else {
-      displayWeather('metric');
+      displayWeather(city.textContent, 'metric');
     }
   });
 

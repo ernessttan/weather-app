@@ -15,7 +15,7 @@ async function displayWeather(city, unit) {
   </div>
   <h1 id='weatherTemp'>${weatherData.temp}</h1>
   <div class='container-row' id='cityInfo'>
-    <h2>${weatherData.city}</h2>
+    <h2 id='city' >${weatherData.city}</h2>
     <i class="fa-solid fa-lg fa-location-dot"></i>
   </div>
   `;
