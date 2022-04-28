@@ -8,4 +8,18 @@ function formatDate(unixDate) {
   return fromUnixTime(unixDate);
 }
 
-export { formatTemperature, formatDate };
+function formatHumidity(humidity) {
+  return `${humidity}%`;
+}
+
+function formatSpeed(speed, unit) {
+  if (unit === 'imperial') {
+    return `${speed} mi/hour`;
+  } if (unit === 'metric') {
+    return `${speed} m/sec`;
+  }
+}
+
+export {
+  formatTemperature, formatDate, formatHumidity, formatSpeed,
+};

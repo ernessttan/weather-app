@@ -7,5 +7,22 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
 document.addEventListener('DOMContentLoaded', () => {
-  displayWeather();
+  displayWeather('New York', 'metric');
+
+  const toggleSwitch = document.querySelector('input[type=checkbox]');
+  toggleSwitch.addEventListener('change', () => {
+    if (toggleSwitch.checked) {
+      displayWeather('imperial');
+    } else {
+      displayWeather('metric');
+    }
+  });
+
+  const searchButton = document.querySelector('.search-btn');
+  searchButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    const citySearch = document.querySelector('#citySearch');
+    displayWeather(citySearch.value, 'metric');
+    citySearch.value = '';
+  });
 });
